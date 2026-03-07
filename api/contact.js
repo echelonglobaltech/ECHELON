@@ -1,10 +1,9 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Extract the data sent from your frontend
   const { name, email, phone, project_type, message } = req.body;
 
   try {
@@ -13,10 +12,11 @@ export default async function handler(req, res) {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'api-key': process.env.BREVO_API_KEY // Grabs securely from Vercel config!
+        'api-key': process.env.BREVO_API_KEY 
       },
       body: JSON.stringify({
-        sender: { email: "noreply@echelon.dev", name: "ECHELON Website" },
+        // ⚠️ CRITICAL: The email address below MUST be verified in your Brevo account!
+        sender: { email: "hello@echelon.dev", name: "ECHELON Website" }, 
         to: [{ email: "hello@echelon.dev", name: "ECHELON Team" }],
         replyTo: { email: email, name: name },
         subject: `New Enquiry: ${project_type.toUpperCase()} — ${name}`,
@@ -34,10 +34,13 @@ export default async function handler(req, res) {
     if (response.ok) {
       return res.status(200).json({ success: true });
     } else {
+      // If Brevo rejects it, this will print the EXACT reason in your Vercel Logs
       const errorData = await response.json();
+      console.error("BREVO REJECTED THE EMAIL:", errorData); 
       return res.status(response.status).json({ error: errorData });
     }
   } catch (error) {
+    console.error("SERVER CRASHED:", error);
     return res.status(500).json({ error: 'Failed to send email' });
   }
-}
+};
