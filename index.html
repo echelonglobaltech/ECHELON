@@ -808,70 +808,73 @@
 
     <!-- ══ CONTACT ══ -->
     <section id="contact" class="section div-border">
-      <div class="container-xs">
-        <div class="sec-header centered reveal">
-          <span class="sec-tag">Get in Touch</span>
-          <h2 class="sec-title">Let&rsquo;s build<br><em>your project</em></h2>
-          <p class="sec-sub">Tell us about your project and we'll respond within 4 hours with a free consultation call.</p>
+  <div class="container-xs">
+    <div class="sec-header centered reveal">
+      <span class="sec-tag">Get in Touch</span>
+      <h2 class="sec-title">Let&rsquo;s build<br><em>your project</em></h2>
+      <p class="sec-sub">Tell us about your project and we'll respond within 4 hours with a free consultation call.</p>
+    </div>
+
+    <div class="contact-card reveal">
+      <form id="contact-form" class="cform" novalidate aria-label="Project enquiry form">
+
+        <div class="form-row">
+          <div class="form-g" id="fg-name">
+            <label for="f-name" class="form-lbl">Full Name <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" class="form-ctrl" placeholder="Your full name" required autocomplete="name" aria-required="true" aria-describedby="err-name">
+            <span class="form-err" id="err-name" role="alert" aria-live="polite"></span>
+          </div>
+          
+          <div class="form-g" id="fg-email">
+            <label for="f-email" class="form-lbl">Email Address <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" class="form-ctrl" placeholder="you@university.edu" required autocomplete="email" aria-required="true" aria-describedby="err-email">
+            <span class="form-err" id="err-email" role="alert" aria-live="polite"></span>
+          </div>
         </div>
 
-        <div class="contact-card reveal">
-          <form id="contact-form" class="cform" novalidate aria-label="Project enquiry form">
-
-            <div class="form-row">
-              <div class="form-g" id="fg-name">
-                <label for="f-name" class="form-lbl">Full Name <span class="req">*</span></label>
-                <input type="text" id="f-name" name="name" class="form-ctrl" placeholder="Your full name" required autocomplete="name" aria-required="true" aria-describedby="err-name">
-                <span class="form-err" id="err-name" role="alert" aria-live="polite"></span>
-              </div>
-              <div class="form-g" id="fg-email">
-                <label for="f-email" class="form-lbl">Email Address <span class="req">*</span></label>
-                <input type="email" id="f-email" name="email" class="form-ctrl" placeholder="you@university.edu" required autocomplete="email" aria-required="true" aria-describedby="err-email">
-                <span class="form-err" id="err-email" role="alert" aria-live="polite"></span>
-              </div>
-            <div class="form-g" id="fg-type">
-              <label for="f-type" class="form-lbl">Project Level <span class="req">*</span></label>
-              <select id="f-type" name="project_type" class="form-ctrl form-select" required aria-required="true" aria-describedby="err-type">
-                <option value="" disabled selected>Select your program</option>
-                <option value="btech">BTech / BE Final Year</option>
-                <option value="mtech">MTech / ME Thesis</option>
-                <option value="mca">MCA Project</option>
-                <option value="phd">PhD Research Prototype</option>
-                <option value="other">Other</option>
-              </select>
-              <span class="form-err" id="err-type" role="alert" aria-live="polite"></span>
-            </div>
-
-            <div class="form-g" id="fg-msg">
-              <label for="f-msg" class="form-lbl">Project Brief <span class="req">*</span></label>
-              <textarea id="f-msg" name="message" class="form-ctrl form-textarea" rows="5" placeholder="Describe your project idea, tech stack, submission deadline, and any specific requirements…" required aria-required="true" aria-describedby="err-msg"></textarea>
-              <span class="form-err" id="err-msg" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-g" id="fg-num">
-              <label for="f-num" class="form-lbl">Contact Number <span class="req">*</span></label>
-              <input type="tel" id="f-num" name="num" class="form-ctrl" placeholder="1234567891" required autocomplete="tel" aria-required="true" aria-describedby="err-num">
-              <span class="form-err" id="err-num" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-footer">
-              <p class="privacy-note">
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-                  <rect x="1" y="5.5" width="11" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
-                  <path d="M3.5 5.5V4A3 3 0 0 1 9.5 4V5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-                </svg>
-                Protected by NDA. Never shared.
-              </p>
-              <button type="submit" id="submit-btn" class="btn btn-primary btn-lg">
-                <span id="sub-txt">Send Enquiry</span>
-                <span id="sub-load" class="hidden"><span class="spin"></span> Sending…</span>
-              </button>
-            </div>
-
-            <div id="form-feedback" class="form-feedback hidden" aria-live="polite" role="status"></div>
-
-          </form>
+        <div class="form-g" id="fg-num">
+          <label for="f-num" class="form-lbl">Contact Number <span class="req">*</span></label>
+          <input type="tel" id="f-num" name="num" class="form-ctrl" placeholder="1234567891" required autocomplete="tel" aria-required="true" aria-describedby="err-num">
+          <span class="form-err" id="err-num" role="alert" aria-live="polite"></span>
         </div>
-      </div>
-    </section>
+
+        <div class="form-g" id="fg-type">
+          <label for="f-type" class="form-lbl">Project Level <span class="req">*</span></label>
+          <select id="f-type" name="project_type" class="form-ctrl form-select" required aria-required="true" aria-describedby="err-type">
+            <option value="" disabled selected>Select your program</option>
+            <option value="btech">BTech / BE Final Year</option>
+            <option value="mtech">MTech / ME Thesis</option>
+            <option value="mca">MCA Project</option>
+            <option value="phd">PhD Research Prototype</option>
+            <option value="other">Other</option>
+          </select>
+          <span class="form-err" id="err-type" role="alert" aria-live="polite"></span>
+        </div>
+
+        <div class="form-g" id="fg-msg">
+          <label for="f-msg" class="form-lbl">Project Brief <span class="req">*</span></label>
+          <textarea id="f-msg" name="message" class="form-ctrl form-textarea" rows="5" placeholder="Describe your project idea, tech stack, submission deadline, and any specific requirements…" required aria-required="true" aria-describedby="err-msg"></textarea>
+          <span class="form-err" id="err-msg" role="alert" aria-live="polite"></span>
+        </div> <div class="form-footer">
+          <p class="privacy-note">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+              <rect x="1" y="5.5" width="11" height="6.5" rx="1.5" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M3.5 5.5V4A3 3 0 0 1 9.5 4V5.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+            </svg>
+            Protected by NDA. Never shared.
+          </p>
+          <button type="submit" id="submit-btn" class="btn btn-primary btn-lg">
+            <span id="sub-txt">Send Enquiry</span>
+            <span id="sub-load" class="hidden"><span class="spin"></span> Sending…</span>
+          </button>
+        </div>
+
+        <div id="form-feedback" class="form-feedback hidden" aria-live="polite" role="status"></div>
+
+      </form>
+    </div>
+  </div>
+</section>
 
   </main>
 
