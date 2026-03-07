@@ -310,6 +310,12 @@ input, textarea, select { font-family: inherit; }
   transform: scale(1.1) rotate(-8deg);
   box-shadow: 0 0 30px rgba(201,169,110,.4);
 }
+.badge-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensures the logo doesn't stretch or distort */
+  padding: 4px; /* Gives the logo a little breathing room away from the glowing border */
+}
 .logo-name {
   font-family: var(--font-d);
   font-size: 1.3rem;
