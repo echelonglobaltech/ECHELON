@@ -2071,3 +2071,67 @@ footer {
 .mn-close:hover {
     color: var(--primary) !important;
 }
+/* ==========================================================
+   MUTED ECHELON TEXT OVERRIDE & HOVER GLOW
+   Philosophy: Solid Muted Gold with Ethereal Hover
+   ========================================================== */
+
+/* 1. Remove the Super Shiny animation and gradient from these elements */
+.contact-card h1,
+.contact-card h2,
+.contact-card h3,
+.contact-card p,
+.form-lbl,
+.form-ctrl:not(button):not([type="submit"]):not([type="button"]):not(.btn):not(select),
+.privacy-note,
+.footer-tagline,
+.footer-contact span {
+    background: none !important;
+    -webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+    background-clip: initial !important;
+    animation: none !important;
+    
+    /* 2. Apply the solid muted gold color */
+    color: #8a7d6a !important; 
+    font-weight: 400;
+    
+    /* NEW: Add transition for a smooth glow fade-in */
+    transition: color 0.3s ease, text-shadow 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* 3. Refine labels to be slightly more legible but still muted */
+.form-lbl {
+    color: #a89878 !important;
+    letter-spacing: 0.15em;
+}
+
+/* 4. Ensure input text (typing) remains visible and solid */
+.form-ctrl:focus {
+    color: #c9a96e !important;
+}
+
+/* ==========================================================
+   GLOW EFFECTS ON HOVER
+   ========================================================== */
+
+/* 5. Text Glow: Brightens the text color and adds a layered soft shadow */
+.contact-card h1:hover,
+.contact-card h2:hover,
+.contact-card h3:hover,
+.contact-card p:hover,
+.form-lbl:hover,
+.privacy-note:hover,
+.footer-tagline:hover,
+.footer-contact span:hover {
+    color: #c9a96e !important; /* Shifts to the brighter primary gold */
+    text-shadow: 0 0 10px rgba(201, 169, 110, 0.4), 
+                 0 0 20px rgba(201, 169, 110, 0.15) !important;
+}
+
+/* 6. Form Input Glow: Illuminates the border and adds an outer/inner box glow */
+.form-ctrl:not(button):not([type="submit"]):not([type="button"]):not(.btn):not(select):hover {
+    border-color: #c9a96e !important;
+    box-shadow: 0 0 15px rgba(201, 169, 110, 0.15), 
+                inset 0 0 10px rgba(201, 169, 110, 0.05) !important;
+}
