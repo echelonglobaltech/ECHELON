@@ -5,11 +5,35 @@ const app = express();
 // Render assigns a dynamic port via process.env.PORT, defaulting to 10000 if not found
 const PORT = process.env.PORT || 10000; 
 
+// ==========================================
+// STRICT CORS CONFIGURATION (Replaces app.use(cors());)
+// ==========================================
+const allowedOrigins = [
+  'https://www.echelontech.publicvm.com', // Your primary domain
+  'https://echelontech.publicvm.com',     // Without www
+  'https://echelon-p6uz.onrender.com'     // Your Render frontend URL just in case
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like server-to-server)
+    // Or if the origin is strictly in our allowedOrigins array
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      console.warn(`Blocked CORS request from origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['POST', 'OPTIONS'], // Only allow POST requests for this endpoint
+  allowedHeaders: ['Content-Type', 'Accept']
+}));
+// ==========================================
+
 // Middleware
-app.use(cors()); // Allows your frontend domain to make requests to this server
 app.use(express.json()); // Parses the incoming JSON in req.body
 
-// The endpoint your frontend will call (e.g., https://your-render-app.onrender.com/send-email)
+// The endpoint your frontend will call
 app.post('/send-email', async (req, res) => {
   const { name, email, phone, project_type, message } = req.body;
 
