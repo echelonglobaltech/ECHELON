@@ -1959,31 +1959,40 @@ footer {
    SPECIFIC CONTACT FORM FIXES
    ========================================================== */
 
-/* 2. Make all placeholders pure white */
+/* Make all standard text input placeholders pure white */
 .contact-card .form-ctrl::placeholder {
     -webkit-text-fill-color: #ffffff !important;
     color: #ffffff !important;
-    opacity: 0.8 !important; /* Slight transparency so it looks like a placeholder */
+    opacity: 0.8 !important;
     background: none !important;
 }
 
-/* 3. Style the Select Panel: Gold background, black text */
+/* Base style for Select Panel: White text when a course IS selected */
 .contact-card select.form-ctrl {
     background: var(--grad-super-shiny) !important;
     background-size: 200% auto !important;
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
+    color: #ffffff !important; /* White text for selected course */
+    -webkit-text-fill-color: #ffffff !important;
     border: 1px solid #D4AF37 !important;
     font-weight: 700 !important;
     animation: goldShine 5s linear infinite !important;
-    /* Optional: Keep your custom dropdown arrow but make it black so it's visible on gold */
+    /* White dropdown arrow */
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
+}
+
+/* Style for when the placeholder ("Select your program") is active */
+/* This targets the <select> while it has no valid option chosen */
+.contact-card select.form-ctrl:invalid {
+    color: #000000 !important; /* Black text for placeholder */
+    -webkit-text-fill-color: #000000 !important;
+    /* Black dropdown arrow to match the black text */
     background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") !important;
 }
 
-/* The opened dropdown options (Browsers block gradients here, so we use solid gold) */
+/* The opened dropdown options: Prussian Blue background, Gold text */
 .contact-card select.form-ctrl option {
-    background: #D4AF37 !important;
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000 !important;
+    background: #003153 !important; /* Prussian Blue */
+    color: #D4AF37 !important;      /* Gold Text */
+    -webkit-text-fill-color: #D4AF37 !important;
     font-weight: 600 !important;
 }
