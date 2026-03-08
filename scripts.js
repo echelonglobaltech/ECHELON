@@ -887,8 +887,10 @@
 
   function sendEmail(payload, cb) {
     var xhr = new XMLHttpRequest();
-    // Targeting Vercel API Endpoint
-    xhr.open('POST', '/api/contact', true);
+    
+    // ⚠️ CRITICAL: Replace 'your-app-name' with your actual live Render URL
+    xhr.open('POST', 'https://echelon-p6uz.onrender.com/send-email', true);
+    
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.timeout = 15000;
     xhr.onreadystatechange = function () {
