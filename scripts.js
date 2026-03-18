@@ -302,7 +302,19 @@
     var ham      = qs('#hamburger');
     var closeBtn = qs('.mn-close');
     var backdrop = qs('.mn-backdrop');
-    if (ham)      ham.addEventListener('click', openMobile);
+    
+    // Updated logic: Toggle open/close based on current state
+    if (ham) {
+      ham.addEventListener('click', function() {
+        var mn = qs('#mobile-nav');
+        if (mn && mn.classList.contains('open')) {
+          closeMobile();
+        } else {
+          openMobile();
+        }
+      });
+    }
+    
     if (closeBtn) closeBtn.addEventListener('click', closeMobile);
     if (backdrop) backdrop.addEventListener('click', closeMobile);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMobile(); });
