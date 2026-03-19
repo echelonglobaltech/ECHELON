@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service | ECHELON</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0a0a0b">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/VksW8mmg/web-app-manifest-512x512.png?v=3">
+  
+  <style>
+    body { opacity: 0; transition: opacity .5s ease; } 
+    body.loaded { opacity: 1; }
+    .legal-container { max-width: 800px; margin: 0 auto; padding: 160px 20px 80px; }
+    .legal-title { font-family: 'Syne', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1rem; }
+    .legal-date { color: var(--text3); font-family: 'JetBrains Mono', monospace; font-size: 0.875rem; margin-bottom: 3rem; }
+    .legal-content h2 { font-family: 'Syne', sans-serif; font-size: 1.5rem; margin: 2.5rem 0 1rem; color: var(--text1); }
+    .legal-content p, .legal-content li { color: var(--text2); line-height: 1.7; margin-bottom: 1rem; font-size: 1.05rem; }
+    .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cur-dot" aria-hidden="true"></div>
+  <div class="cur-ring" aria-hidden="true"></div>
+
+  <header role="banner">
+    <nav id="navbar">
+      <div class="nav-wrap">
+        <a href="index.html" class="nav-logo">
+          <div class="logo-badge"><img src="https://i.postimg.cc/jqwfTpqX/unnamed.png" alt="ECHELON Logo" class="badge-img"></div>
+          <span class="logo-name">ECHELON</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html#services" class="nav-link">Services</a></li>
+          <li><a href="index.html#process" class="nav-link">Process</a></li>
+          <li><a href="index.html#vault" class="nav-link">Work</a></li>
+          <li><a href="index.html#pricing" class="nav-link">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <a href="index.html#contact" class="nav-cta desktop">Start Project</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="legal-container">
+      <h1 class="legal-title">Terms of Service</h1>
+      <p class="legal-date">Last Updated: March 2026</p>
+
+      <div class="legal-content">
+        <p>By accessing ECHELON (echelontech.online) and engaging our services, you agree to comply with the following Terms of Service.</p>
+
+        <h2>1. Nature of Services</h2>
+        <p>ECHELON functions as a professional development and engineering studio. We provide custom software, research prototypes, and technical documentation intended to serve as educational reference materials and collaborative engineering projects for scholars. It is the client's responsibility to review their respective university's code of conduct regarding external technical assistance.</p>
+
+        <h2>2. Project Scope & Revisions</h2>
+        <ul>
+          <li><strong>Development Phase:</strong> We offer unlimited bug fixes and minor aesthetic revisions during the active development phase to ensure the project meets the initially agreed-upon requirements.</li>
+          <li><strong>Scope Creep:</strong> Any major architectural changes or feature additions requested after the initial Briefing & Proposal phase may incur additional charges and timeline extensions.</li>
+        </ul>
+
+        <h2>3. Payment Terms</h2>
+        <p>We operate on a transparent, milestone-based payment structure to ensure mutual trust:</p>
+        <ul>
+          <li><strong>40% Initial Deposit:</strong> Required to commence project architecture and development.</li>
+          <li><strong>30% Mid-Point Review:</strong> Due upon completion of 50% of the deliverables and GitHub review.</li>
+          <li><strong>30% Final Delivery:</strong> Due prior to the handover of the final codebase, full documentation, and transfer of ownership.</li>
+        </ul>
+        <p>Due to the custom nature of our engineering work, payments made for completed milestones are non-refundable.</p>
+
+        <h2>4. Delivery & Post-Delivery Support</h2>
+        <p>Delivery timelines are estimated during the Proposal phase. We offer 30 to 60 days of post-delivery support (depending on your pricing tier) which includes mock vivas, Q&A preparation, and bug squashing. This support period covers the existing scope and does not cover the building of new features.</p>
+
+        <h2>5. Originality & Ownership</h2>
+        <p>ECHELON guarantees that all code and documentation delivered are entirely original and plagiarism-free. Upon final payment, full intellectual property rights and ownership of the delivered project are transferred to the client.</p>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="scripts.js"></script>
+  <script>window.addEventListener('load', () => document.body.classList.add('loaded'));</script>
+</body>
+</html>
