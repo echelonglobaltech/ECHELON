@@ -1,0 +1,16 @@
+{
+  "name": "ECHELON · Engineering the Apex",
+  "short_name": "ECHELON",
+  "description": "Production-grade academic engineering for CS/IT scholars.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0b",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "https://i.postimg.cc/VksW8mmg/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
